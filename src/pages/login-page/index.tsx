@@ -7,11 +7,11 @@ import { useNavigate } from "react-router-dom";
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-   
+
     try {
       const response = await axios.post("https://api.escuelajs.co/api/v1/auth/login", {
         email,
@@ -21,55 +21,64 @@ const LoginPage: React.FC = () => {
 
       localStorage.setItem("access_token", token);
 
-      console.log("Login bem-sucedido", response.data);
+
+
 
       const profileResponse = await axios.get("https://api.escuelajs.co/api/v1/auth/profile", {
         headers: {
-          Authorization: `Bearer ${token}`, 
-        }})
+          Authorization: `Bearer ${token}`,
+        }
+      })
 
-        console.log("Perfil do usuário:", profileResponse.data);
-        console.log("email do usuário:", profileResponse.data.email);
-        console.log("nome do usuário:", profileResponse.data.name);
-       
-        navigate("/Autenticado", { state: profileResponse.data})
+
+      navigate("/Autenticado", { state: profileResponse.data })
 
     } catch (error) {
-        navigate("/NaoAutenticado")
-      console.error("Erro ao fazer login", error);
+      navigate("/NaoAutenticado")
+
     }
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-        <Header/>
+
+    <div className="flex justify-left items-center min-h-screen bg-custom-bg bg-cover bg-center h-screen ">
+
+      <Header />
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded shadow-md w-96"
+        className=" p-6 ml-10  w-96"
       >
-        <h2 className="text-2xl font-bold mb-4">Login</h2>
+        <h2 className="text-5xl font-bold mb-10 text-teal-50">Faça seu login:</h2>
         <div className="mb-4">
-          <label className="block text-gray-700">Email:</label>
-          <input
-            type="email"
-            className="w-full p-2 border rounded"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+
+          <label className="block text-2xl text-teal-50">Email:</label>
+          <div className=" bg-none focus-within:bg-gradient-to-tr from-teal-500 via-emerald-600 via-46% to-teal-200 p-[1px]  rounded-lg ">
+            <input
+              type="email"
+              className="w-full shadow-2xl shadow-teal-400 text-teal-50 h-10 p-2 rounded-lg outline-none appearance-none bg-zinc-800"
+
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700">Senha:</label>
-          <input
-            type="password"
-            className="w-full p-2 border rounded"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+        <div className="mb-10">
+          <label className="block text-2xl text-teal-50">Senha:</label>
+          <div className=" bg-none focus-within:bg-gradient-to-tr from-teal-500 via-emerald-600 via-46% to-teal-200 p-[1px] rounded-lg  ">
+            <input
+              type="password"
+              className="w-full shadow-2xl shadow-teal-400 text-teal-50 h-10 p-2 rounded-lg outline-none appearance-none bg-zinc-800  "
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
         </div>
-        <Button label=" Entrar"/>
-       
+        <Button label=" Entrar" />
+
       </form>
     </div>
+
   );
 };
 

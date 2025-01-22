@@ -14,10 +14,11 @@ const AuthenticatedUser: React.FC = () => {
     return (
         <>
             <Header />
-            <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
-                <div className="bg-white p-6 rounded shadow-md w-96 text-center">
-                    <h2 className="text-2xl font-bold mb-4">Bem-vindo, {name}!</h2>
-                    <p className="text-gray-700 mb-4">Email: {email}</p>
+            <div className="flex flex-col justify-center items-center min-h-screen  bg-custom-bg bg-cover bg-center h-screen">
+                <div className="bg-zinc-800 p-6 rounded-xl shadow-2xl shadow-teal-400 w-72 h-52 text-center ">
+                    <h2 className="text-4xl text-teal-50 font-bold mb-8">Bem-vindo!</h2>
+                    <p className="text-xl text-teal-50 te mb-4" >Nome do usuario: {name}</p>
+                    <p className="text-xl text-teal-50 te mb-4">Email: {email}</p>
                 </div>
             </div>
         </>
