@@ -9,8 +9,8 @@ const Header: React.FC = () => {
           <a href="/" className="hover:underline">
             Login
           </a>
-          <a href="#about" className="hover:underline">
-            Sobre
+          <a href="Autenticado" className="hover:underline">
+            teste page autenticado
           </a>
           <a href="#contact" className="hover:underline">
             Contato

@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+   
     try {
       const response = await axios.post("https://api.escuelajs.co/api/v1/auth/login", {
         email,
@@ -18,8 +21,6 @@ const LoginPage: React.FC = () => {
 
       localStorage.setItem("access_token", token);
 
-      console.log("Token armazenado no Local Storage:", token);
-
       console.log("Login bem-sucedido", response.data);
 
       const profileResponse = await axios.get("https://api.escuelajs.co/api/v1/auth/profile", {
@@ -28,15 +29,20 @@ const LoginPage: React.FC = () => {
         }})
 
         console.log("Perfil do usuário:", profileResponse.data);
+        console.log("email do usuário:", profileResponse.data.email);
+        console.log("nome do usuário:", profileResponse.data.name);
+       
+        navigate("/Autenticado", { state: profileResponse.data})
 
     } catch (error) {
+        navigate("/NaoAutenticado")
       console.error("Erro ao fazer login", error);
     }
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-        <Header></Header>
+        <Header/>
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded shadow-md w-96"
