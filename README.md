@@ -47,46 +47,7 @@ O objetivo deste teste técnico é avaliar suas habilidades em desenvolvimento f
      - `components/`: onde os componentes reutilizáveis serão armazenados.
      - `pages/`: onde as páginas da aplicação serão armazenadas.
 
-    #### Importante: Caso queira adicionar mais pastas para melhorar a organização, como `types` com os tipos da aplicação, etc.... fique a vontade, se sinta livre e o intuito do teste é exatamente esse, ver sua criatividade perante um desafio
 
-## Instruções
 
-1. **Configuração do Ambiente**:
-   - Clone este repositório: `git clone <URL_DO_REPOSITORIO>`
-   - Navegue até a pasta do projeto: `cd <NOME_DO_PROJETO>`
-   - Instale as dependências: 
-     ```
-     npm install
-     ```
-    - E finalmente, rode o ambiente de desenvolvimento:
-    ```
-     npm run dev
-     ```
-2. **Desenvolvimento**:
-   - Utilize TypeScript para garantir a tipagem estática do seu código.
-   - Utilize Tailwind CSS para estilizar a aplicação de forma responsiva e moderna.
-   - Utilize React Router para roteamento do projeto
-   - Implemente a lógica de autenticação conforme descrito acima
 
-3. **Execução**:
-   - Para iniciar o servidor de desenvolvimento, utilize o comando:
-     ```
-     npm start
-     ```
-   - A aplicação estará disponível em `http://localhost:3000`.
 
-4. **Submissão**:
-   - Após concluir o teste, suba no seu github e me mande o link!
-
-## Critérios de Avaliação
-
-- Criatividade perante um desafio (O mais importante)
-- Qualidade do código (limpeza, organização, uso apropriado de TypeScript).
-- Funcionalidade da aplicação (se todas as funcionalidades estão implementadas corretamente).
-- Experiência do usuário (UI/UX).
-
-## Dúvidas
-
-Se você tiver alguma dúvida durante o desenvolvimento, sinta-se à vontade para trocar uma ideia!
-
-Boa sorte e divirta-se!
