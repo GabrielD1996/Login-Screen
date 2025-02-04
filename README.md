@@ -48,6 +48,25 @@ O objetivo deste teste técnico é avaliar suas habilidades em desenvolvimento f
      - `pages/`: onde as páginas da aplicação serão armazenadas.
 
 
+## Instruções
 
+1. **Configuração do Ambiente**:
+   - Clone este repositório: `git clone <URL_DO_REPOSITORIO>`
+   - Navegue até a pasta do projeto: `cd <NOME_DO_PROJETO>`
+   - Instale as dependências: 
+     ```
+     npm install
+     ```
+    - E finalmente, rode o ambiente de desenvolvimento:
+    ```
+     npm run dev
+     ```
+
+2. **Execução**:
+   - Para iniciar o servidor de desenvolvimento, utilize o comando:
+     ```
+     npm start
+     ```
+   - A aplicação estará disponível em `http://localhost:3000`.
 
 
